@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>toggle</title>
+    <style>
+        div {
+            max-width: 80%;
+            margin: 0 auto;
+            background: yellowgreen;
+            height: 600px;
+        }
+
+        .addBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 10%;
+            width: 60px;
+            height: 60px;
+            background: red;
+            color: white;
+            font-size: 40px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            -webkit-transition: all .3s ease-in-out 0s;
+            -moz-transition: all .3s ease-in-out 0s;
+            transition: all .3s ease-in-out 0s;
+        }
+
+        .hide {
+            transform: translate3d(0, 120px, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div div1 div-first"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="addBtn">+</div>
+    <script>
+        (function () {
+            //判断元素是否含有某一class
+            // let firstDiv = document.getElementsByTagName('div')[0];
+            // let arrayClassList = Array.from(firstDiv.classList);
+            // console.log(arrayClassList.indexOf('div1') !== '-1');
+            // console.log(firstDiv.className);
+            // function hasClass(el,className) {
+            //     let reg = new RegExp('(^|\\s)' + className + '(\\s|$)');
+            //     return reg.test(el.className);
+            // }
+            // console.log(hasClass(firstDiv,'div1'));
+
+            //实现当页面向下滚动时隐藏按钮，向上滚动时显示按钮；
+            let addBtn = document.getElementsByClassName('addBtn')[0];
+            window.addEventListener('scroll', handleScroll);
+
+            function handleScroll(event) {
+                let e = event || window.event;
+                let firstScrollY = window.scrollY;
+                let timer;
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    let currentScrollY = window.scrollY;
+                    console.log(firstScrollY);
+                    console.log(currentScrollY);
+                    if (currentScrollY > firstScrollY) {
+                        console.log('down');
+                        addBtn.classList.add('hide');
+                    } else if (currentScrollY < firstScrollY) {
+                        console.log('up');
+                        addBtn.classList.remove('hide');
+                    }
+
+                }, 200);
+            }
+            window.addEventListener('click', function () {
+                addBtn.classList.toggle('hide');
+            })
+        })();
+    </script>
+</body>
+
+</html>
