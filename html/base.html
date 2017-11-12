@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>base</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <base href="http://www.example.com/page.html">
+    <!-- If multiple base elements are specified, only the first href and first target value are used; all others are ignored. -->
+
+</head>
+
+<body>
+    <!-- The HTML noscript element defines a section of HTML to be inserted if a script type on the page is unsupported or if scripting is currently turned off in the browser. -->
+    <noscript>
+        <!-- anchor linking to external file -->
+        <a href="https://www.mozilla.com/">External Link</a>
+    </noscript>
+
+    <!-- The HTML <datalist> element contains a set of <option> elements that represent the values available for other controls. -->
+    <label>Choose a browser from this list:
+    <input list="browsers" name="myBrowser" /></label>
+    <datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Internet Explorer">
+    <option value="Opera">
+    <option value="Safari">
+    <option value="Microsoft Edge">
+    </datalist>
+
+    <form action="test.php" method="post">
+    <fieldset>
+        <legend>Title</legend>
+        <input type="radio" id="radio">
+        <label for="radio">Click me</label>
+    </fieldset>
+    </form>
+
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="range" name="b" value="50" /> +
+        <input type="number" name="a" value="10" /> =
+        <output name="result">60</output>
+    </form>
+
+    <!-- The HTML <optgroup> element creates a grouping of options within a <select> element. -->
+    <select>
+        <optgroup label="Group 1">
+            <option>Option 1.1</option>
+        </optgroup>
+        <optgroup label="Group 2">
+            <option>Option 2.1</option>
+            <option>Option 2.2</option>
+        </optgroup>
+        <optgroup label="Group 3" disabled>
+            <option>Option 3.1</option>
+            <option>Option 3.2</option>
+            <option>Option 3.3</option>
+        </optgroup>
+    </select>
+
+    <a href="mailto:example@163.com">mail</a>
+    <a href="tel:1882389283">telephone</a>
+
+  <dl> 
+  <dt>Firefox</dt>
+  <dd>
+    A free, open source, cross-platform,
+    graphical web browser developed by the
+    Mozilla Corporation and hundreds of
+    volunteers.
+  </dd>
+  <!-- Other terms and descriptions -->
+  </dl>
+
+  <map name="primary">
+  <area shape="circle" coords="75,75,75" href="left.html">
+  <area shape="circle" coords="275,75,75" href="right.html">
+  </map>
+  <img usemap="#primary" src="http://placehold.it/350x150" alt="350 x 150 pic">  
+
+</body>
+
+</html>
