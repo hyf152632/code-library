@@ -1,0 +1,57 @@
+/* If font is specified as a shorthand for several font-related properties,
+then: it must include values for: <font-size><font-family> */
+.example {
+    font: 2em "Open Sans",sans-serif;
+}
+
+/* text-indent 
+The text-indent CSS property specifies the amount of indentation (empty space) that is put before lines of text in a block. By default,
+this controls the indentation of only the first formatted line of the block,
+but the hanging and each-line keywords can be used to change this behavior.
+text-indent设置一个负的极大值，则里面的文字将跑出容器，达到隐藏文字的目的
+*/
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.boxShadow {
+    box-shadow: inset 0 0 1em gold,0 0 1em red;
+}
+
+/* background-attachment 
+If a background-image is specified,the background-attachment CSS property determines 
+whether that image's position is fixed within the viewport, or scrolls along with its containing block. */
+
+/* background-origin
+Initial value    padding-box */
+
+/* position: relative;
+参照物为元素自身 */
+
+/* position: absolute
+参照物为第一个定位祖先/根元素 */
+
+/* position: fixed
+参照物为视窗 */
+
+.clearfix:after{
+    content:'.';
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.clearfix{
+    zoom: 1;
+}
+
+/* flex&nbsp;ie9及以下不支持，目前主要用于移动web页面中 */
+
+/* transform-origin */
+/* perspective */
+/* transition-delay */
+

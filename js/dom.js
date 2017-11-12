@@ -3,6 +3,21 @@ export function hasClass(el, className) {
     return reg.test(el.className)
 }
 
+//兼容IE6,7,8
+function getElementByClassName(root,className) {
+    if(root.getElementByClassName) {
+        return root.getElementByClassName(className);
+    }else{
+        let elements = root.getElementsByTagName('*');
+        let result = [];
+        result = elements.map((el,className) => {
+            if(hasClass(el,className)){
+                return el;
+            }
+        })
+    }
+}
+
 export function addClass(el, className) {
     if (hasClass(el, className)) {
         return

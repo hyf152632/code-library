@@ -1,0 +1,4 @@
+.head {position: absolute; top: 0;left: 0;width: 100%; height: 100px;}
+.body {position: absolute; top: 100px;left: 0;bottom: 100px;right: 0} 
+/* 一个绝对定位的元素，如果四个方向的位置都设置值，那么这个元素就会被撑开 */
+.foot {position: absolute; bottom: 0;left: 0;width:100%;height: 100px;}

@@ -111,6 +111,10 @@ axios.get(url, {
     return Promise.resolve(res.data)
 })
 
+// string.match
+// Return value
+// An Array containing the entire match result and any parentheses - captured matched results; null if there were no matches.
+
 
 
 
