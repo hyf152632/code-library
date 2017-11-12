@@ -1,0 +1,10 @@
+.confirm-wrapper
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 999
+
+//position:absolute
+// it is positioned relative to the screen's viewport and doesn't move when scrolled. 
+//Its final position is determined by the values of top, right, bottom, and left.

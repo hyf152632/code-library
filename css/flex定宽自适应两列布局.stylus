@@ -1,0 +1,6 @@
+.item
+    display: flex
+    .rank
+        flex: 0 0 25px
+    .content
+        flex: 1
