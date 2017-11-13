@@ -1,0 +1,26 @@
+/* html结构：
+<div class="parent">
+	<div class="left">
+		<p>left</p>
+	</div>
+	<div class="center">
+		<p>center</p>
+	</div>
+	<div class="right">
+		<p>right</p>
+		<p>right</p>
+	</div>
+</div> */
+
+.parent {}
+
+.left,
+.center {
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.right {
+    overflow: hidden;
+}

@@ -1,0 +1,82 @@
+/* 父子元素，水平居中 */
+/* 父元素和子元素的大小不固定，子元素居中 */
+/* 1: */
+.parent {
+    text-align: center;
+}
+
+.child {
+    display: inline-block;
+}
+
+/* display:inline-block 实现子元素的大小随着内容的变化而变化 
+IE6,7不支持inline-block 
+兼容： 
+display:inline;
+zoom:1; */
+
+/* 2: */
+/* <div class="parent">
+<div class="child">DEMO</div>
+</div> */
+.child {
+    display: table;
+    margin: 0 auto;
+}
+
+/* 3: */
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 优点：脱离文档，不会对其他元素造成影响。 
+*/
+
+/* 4: */
+.parent {
+    display: flex;
+    justify-content: center;
+}
+
+.child {
+    margin: 0 auto;
+}
+/* 兼容性不好 */
+
+
+/* 父容器和子容器高度不固定 */
+/* 垂直居中 */
+
+/* html结构： */
+/* <div class="parent">
+<div class="child">DEMO</div>
+</div> */
+
+/* 1 */
+.parent {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* 2 */
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 3 */
+.parent {
+    display: flex;
+    align-items: center;
+}
+

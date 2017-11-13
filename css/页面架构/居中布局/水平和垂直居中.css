@@ -1,0 +1,48 @@
+/* html结构： */
+/* <div class="parent">
+<div class="child">DEMO</div>
+</div> */
+
+/* 1 */
+.parent {
+    width: 200px;
+    height: 300px;
+}
+.parent {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.child {
+    display: inline-block;
+}
+
+/* 2 */
+.parent {
+    width: 200px;
+    height: 300px;
+}
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 3 */
+parent {
+    width: 200px;
+    height: 300px;
+}
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

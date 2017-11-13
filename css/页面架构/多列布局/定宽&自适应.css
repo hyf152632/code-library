@@ -1,0 +1,121 @@
+/* html结构： */
+/* <div class="parent">
+  <div class="left">
+    <p>left</p>
+  </div>
+  <div class="right">
+    <p>right</p>
+    <p>right</p>
+  </div>
+</div> */
+body {
+    margin: 20px;
+}
+
+.parent {}
+
+.left {
+    float: left;
+    width: 100px;
+}
+
+.right {
+    margin-left: 120px;
+}
+
+/* 改进版 */
+/* html结构： */
+/* <div class="parent">
+	<div class="left"><p>left</p></div>
+	<div class="right-fix">
+		<div class="right">
+			<p>right</p><p>right</p>
+		</div>
+	</div>
+</div> */
+.parent {}
+
+.left {
+    float: left;
+    width: 100px;
+    position: relative;
+    /* 提高层级 */
+}
+
+.right-fix {
+    float: right;
+    width: 100%;
+    margin-left: -100px;
+}
+
+.right {
+    margin-left: 120px;
+}
+
+/* 3 */
+/* float + overflow */
+
+/* <div class="parent">
+	<div class="left">
+		<p>left</p>
+	</div>
+	<div class="right">
+		<p>right</p>
+		<p>right</p>
+	</div>
+</div> */
+.parent {}
+
+.left {
+    float: left;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.right {
+    overflow: hidden;
+}
+
+/* 4 */
+/* table */
+/* <div class="parent">
+	<div class="left">
+		<p>left</p>
+	</div>
+	<div class="right">
+		<p>right</p>
+		<p>right</p>
+	</div>
+</div> */
+.parent {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /* 加速渲染，布局优先 */
+}
+
+.left,
+.right {
+    display: table-cell;
+}
+
+.left {
+    width: 100px;
+    padding-right: 20px;
+}
+
+/* 5 */
+/* flex */
+.parent {
+    display: flex;
+}
+
+.left {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.right {
+    flex: 1;
+}
+
