@@ -115,6 +115,90 @@ axios.get(url, {
 // Return value
 // An Array containing the entire match result and any parentheses - captured matched results; null if there were no matches.
 
+let addEvent = document.addEventListener ? 
+    function(elem,type,listener,useCapture=false) {
+        elem.addEventListener(type,listener,useCapture);
+    } : 
+    function(elem,type,listener,useCapture) {
+        elem.attachEvent('on' + type, listener);
+    };
 
+//ajax请求参数序列化
+function serialize(data) {
+    if(!data) return '';
+    let pairs = [];
+    for (let name in data) {
+        if(!data.hasOwnProperty(name)) continue;
+        if(typeof data[name] === 'function') continue;
+        let value = data[name].toString();
+        name = encodeURIComponent(name);
+        value = encodeURIComponent(value);
+        pairs.push(name + '=' + value);
+    }
+    return pairs.join('&');
+}
+
+xhr.open('post','example.json',true);
+xhr.send(serialize(formdata));
+
+//读取cookie
+function getCookie() {
+    let cookie = {};
+    let all = document.cookie;
+    if(all === '')
+        return cookie;
+    let list = all.split(';');
+    list.forEach((item) => {
+        let p = item.indexOf('=');
+        let name = item.substring(0,p);
+        name = decodeURIComponent(name);
+        let value = item.substring(p + 1);
+        value = decodeURIComponent(value);
+        cookie[name] = value;
+    })
+    return cookie;
+}
+//设置/修改cookie
+function setCookie(name,value,expires,path,domain,secure) {
+    let cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+    if(expires)
+        cookie += ';expires=' + expires.toGMTString();
+    if(path)
+        cookie += ';path=' + path;
+    if(domain)
+        cookie += ';domain' + domain;
+    if(secure)
+        cookie += ';secure' + secure;
+    document.cookie = cookie;
+}
+
+//删除cookie
+function removeCookie(name, path, domain) {
+    document.cookie = `name=${name};path=${path};domain=${domain};max-age=0`;
+}
+
+//动画函数
+let animation = function(ele,attr,from,to) {
+    let distance = Math.abs(to - from);
+    let stepLength = distance/100;
+    let sign = (to - from)/distance;
+    let offset = 0;
+    let step = function() {
+        let tmpOffset = offset + stepLength;
+        if(tmpOffset < distance) {
+            ele.style[attr] = from + tmpOffset*sign + 'px';
+            offset = tmpOffset;
+        } else {
+            ele.style[attr] = to + 'px';
+            clearInterval(intervalID);
+        }
+    }
+    ele.style[attr] = from + 'px';
+    let intervalID = setInterval(step,10);
+}
+
+//开，关新窗口
+let w = window.open('subwin.html','subwin','width=400,height=350,status=yes,resizable=yes');
+w.close();
 
 
