@@ -202,3 +202,20 @@ let w = window.open('subwin.html','subwin','width=400,height=350,status=yes,resi
 w.close();
 
 
+//如何判断某变量是否为数组数据类型
+if (typeof Array.isArray === "undefined") {
+    Array.isArray = function (arg) {
+        return Object.prototype.toString.call(arg) === "[object Array]"
+    };
+}
+
+window.location.href
+// 得到和使用的是完整的url，比如window.location.href = "www.baidu.com”表示的是重新定向，页面跳转
+// 到新的页面。也可以通过window.location.href得到a标签的完整的href，比如 < a href = "#book" > 如果使用href，那
+// 么可以得到完整的链接（url）
+
+window.location.hash
+// 得到的是锚链接。相比如href, 通过window.location.hash并不会跳转到新的链接，只会在当前链接里面
+// 改变锚链。并且如果有 < a href = "#book" > 通过window.location.hash得不到完整的链接（URL），仅仅得到#book.
+
+

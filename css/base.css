@@ -55,3 +55,56 @@ Initial value    padding-box */
 /* perspective */
 /* transition-delay */
 
+/* div等元素height:100%高度为什么不生效 */
+/* In specific,all percentage-based sizes must inherit from parent block elements,
+and if any of those ancestors fail to specify a size,they are assumed to be sized at 0 x 0 pixels 
+具体地讲，所有基于本分比的尺寸必须从父块元素继承，并且如果任一父项未能指定尺寸，则它们的尺寸假定为0 x 0像素 */
+
+/* 隐藏H1文本为Logo标志  */
+ h1 {
+text-indent: -9999px;
+margin: 0 auto;
+width: 320px;
+height: 85px;
+background: transparent url("images/logo.png") no-repeat scroll;
+}
+
+/* 强制垂直滚动条 */
+html {
+    height: 101%
+}
+
+/* 三角形列表前缀 */
+
+ul {
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
+}
+    li:before {
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+     border-width: 0.35em 0 0.35em 0.45em;
+     display: block;
+     height: 0;
+     width: 0;
+     left: -1em;
+     top: 0.9em;
+     position: relative;
+}
+
+/* 网页顶端阴影  */
+body:before {
+content: "";
+position: fixed;
+top: -10px;
+left: 0;
+width: 100%;
+height: 10px;
+-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+ -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, .8);
+ z-index: 100;
+
+}
