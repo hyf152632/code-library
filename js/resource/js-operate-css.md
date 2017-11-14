@@ -18,9 +18,9 @@ element.style.lineHeight
 .m-nav{font-size: 14px;}
 .m-nav li{width: 100px;padding-left: 20px;}
 </style>
-对应的DOM节点是element，那么要获取样式表中第二条规则中padding-left的属性值, 以下是实现这个操作对应的代码，请补全代码:
+对应的DOM节点是element，那么要获取样式表中第二条规则中padding-left的属性值, 以下是实现这个操作对应的代码，补全代码:
 element.sheet.cssRules[1].style._
-解：paddingLeft
+paddingLeft
 
 element.style.borderColor = 'red';
             element.style.color = 'red';

@@ -218,4 +218,19 @@ window.location.hash
 // 得到的是锚链接。相比如href, 通过window.location.hash并不会跳转到新的链接，只会在当前链接里面
 // 改变锚链。并且如果有 < a href = "#book" > 通过window.location.hash得不到完整的链接（URL），仅仅得到#book.
 
+//获取数组的最大，最小值：
+let arr = [13,64,90,4,6,0,3];
+Math.max.apply(Math,arr);
+
+//清空数组
+//arr.length = 0;
+//arr.splice(0,arr.length);
+
+//使用原始操作符比函数调用快，比如
+//not do this
+let min = Math.min(a,b);
+arr.push(min);
+//use this
+let min = a < b ? a : b;
+arr[arr.length] = min;
 
