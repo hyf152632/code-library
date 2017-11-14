@@ -234,3 +234,19 @@ arr.push(min);
 let min = a < b ? a : b;
 arr[arr.length] = min;
 
+
+//location
+
+//location对象表示当前页面的URL信息。例如，一个完整的URL：
+//http://www.example.com:8080/path/index.html?a=1&b=2#TOP
+//可以用location.href获取
+location.protocol; // 'http'
+location.host; // 'www.example.com'
+location.port; // '8080'
+location.pathname; // '/path/index.html'
+location.search; // '?a=1&b=2'
+location.hash; // 'TOP'
+//要加载一个新页面，可以调用location.assign() 。如果要重新加载当前页面，调用location.reload()方法非常方便。
+
+// 构造函数,除了直接用{ ... } 对象关联的方式创建一个对象外，JavaScript还可以用一种构造函数的方法来创建对象。
+

@@ -1,9 +1,6 @@
 
-web app变革之rem
+web app变革之rem  
 
-                                
-                                    商业-Owen                                
-                                                                                                                                                                                                                   
     rem这是个低调的css单位，近一两年开始崭露头角，有许多同学对rem的评价不一，有的在尝试使用，有的在使用过程中遇到坑就弃用了。但是我对rem综合评价是用来做web app它绝对是最合适的人选之一。
 rem是什么？
 
@@ -31,27 +28,27 @@ rem能等比例适配所有屏幕
 
     上面讲了一大堆目前大部分公司主流的一些web app的适配解决方案，接下来讲下rem是如何工作的。
     上面说过rem是通过根元素进行适配的，网页中的根元素指的是html我们通过设置html的字体大小就可以控制rem的大小。举个例子：
-1. html{
-2.     font-size:20px;
-3. }
-4. .btn {
-5.     width:6rem;
-6.     height:3rem;
-7.     line-height:3rem;
-8.     font-size:1.2rem;
-9.     display:inline-block;
-10.     background:#06c;
-11.     color:#fff;
-12.     border-radius:.5rem;
-13.     text-decoration: none;
-14.     text-align: center;
-15. }
+html{
+    font-size:20px;
+}
+.btn {
+    width:6rem;
+    height:3rem;
+    line-height:3rem;
+    font-size:1.2rem;
+    display:inline-block;
+     background:#06c;
+     color:#fff;
+     border-radius:.5rem;
+     text-decoration: none;
+     text-align: center;
+ }
 Demo 上面代码结果按钮大小如下图：
 
 我把html设置成10px是为了方便我们计算，为什么6rem等于60px。如果这个时候我们的.btn的样式不变，我们再改变html的font-size的值，看看按钮发生上面变化:
-1. html{
-2.     font-size:40px;
-3. }
+html{
+    font-size:40px;
+}
 Demo
 按钮大小结果如下：
 
@@ -74,39 +71,34 @@ Demo
 
     上面的表格蓝色一列是Demo3中页面的尺寸，页面是以640的宽度去切的，怎么计算不同宽度下font-site的值，大家看表格上面的数值变化应该能明白。举个例子：384/640 = 0.6，384是640的0.6倍，所以384页面宽度下的font-size也等于它的0.6倍，这时384的font-size就等于12px。在不同设备的宽度计算方式以此类推。
     Demo3中我是通过JS去动态计算根元素的font-size，这样的好处是所有设备分辨率都能兼容适配，淘宝首页目前就是用的JS计算。但其实不用JS我们也可以做适配，一般我们在做web app都会先统计自己网站有哪些主流的屏幕设备，然后去针对那些设备去做media query设置也可以实现适配，例如下面这样：
-1. html {
-2.     font-size :20px;
-3. }
-4. @media only screen and(min-width:401px){
-5.     html {
-6.         font-size:25px!important;
-7. }
-8. }
-9. @media only screen and(min-width:428px){
-10.     html {
-11.         font-size:26.75px!important;
-12. }
-13. }
-14. @media only screen and(min-width:481px){
-15.     html {
-16.         font-size:30px!important;
-17. }
-18. }
-19. @media only screen and(min-width:569px){
-20.     html {
-21.         font-size:35px!important;
-22. }
-23. }
-24. @media only screen and(min-width:641px){
-25.     html {
-26.         font-size:40px!important;
-27. }
-28. }
+html {
+    font-size :20px;
+}
+@media only screen and(min-width:401px){
+    html {
+        font-size:25px!important;
+}
+}
+@media only screen and(min-width:428px){
+     html {
+         font-size:26.75px!important;
+ }
+ }
+ @media only screen and(min-width:481px){
+     html {
+         font-size:30px!important;
+ }
+ }
+ @media only screen and(min-width:569px){
+     html {
+         font-size:35px!important;
+ }
+ }
+ @media only screen and(min-width:641px){
+     html {
+         font-size:40px!important;
+ }
+ }
     上面的做的设置当然是不能所有设备全适配，但是用JS是可以实现全适配。具体用哪个就要根据自己的实际工作场景去定了。
-    下面推荐两个国内用了rem技术的移动站，大家可以上去参考看看他们的做法，手机淘宝目前只有首页用了rem，淘宝native app的首页是内嵌的web app首页。
-淘宝首页：m.taobao.com
-D X：m.dx.com
-最后我们再来看一看他的兼容性：
+em会继承父级元素的字体大小。  
 
-Tags: rem
-                                                                                                                                        
