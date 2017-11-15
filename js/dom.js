@@ -100,3 +100,12 @@ get('story.json').then(function (response) {
 }, function (error) {
     console.error("Failed!", error);
 })
+
+//Modernizr原理
+let root = document.documentElement;   //<html>
+
+if('textShaow' in root.style) {
+    root.classList.add('textshadow');
+}else {
+    root.classList.add('no-textshadow');
+}
