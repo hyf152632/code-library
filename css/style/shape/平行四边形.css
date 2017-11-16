@@ -1,0 +1,18 @@
+.button {
+    position: relative;
+}
+
+.button::before {
+    content: '';    /*用伪元素来生成一个矩形*/
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skew(45deg);
+}
+
+/* 这个技巧的关键在于，我们利用伪元素以及定位属性产生了一个方块， 然后对伪元素设置样式，并将其放置在其宿主元素的下层。
+这种思路同样可以运用在其他场景中，从而得到各种各样的效果。 */
