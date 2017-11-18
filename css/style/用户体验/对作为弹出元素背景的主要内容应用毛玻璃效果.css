@@ -1,0 +1,19 @@
+
+/* 将主要内容全都包裹起来 */
+/* 每当弹出一个 对话框，都需要给 <main>元素增加一个类，以便对它应用模糊滤镜 */
+main {
+    transition: .6s filter;
+}
+
+main.de-emphasized {
+    filter: blur(5px);
+}
+
+/* 如果能把这两种弱化背景的手法(阴影和模糊)结合起来，那就更好了。
+有一种实现方法就是使用 brightness() 和 / 或 contrast() 滤镜:  */
+main.de-emphasized {
+    filter: blur(3px) contrast(.8) brightness(.8);
+}
+
+/* 通过 CSS 滤镜产生阴影效果，意味 着一旦滤镜不被支持，我们将没有任何回退方案 */
+/* box-shadow 方案)来实现阴影效果，从而起 到回退样式的作用 */
