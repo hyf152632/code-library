@@ -1,0 +1,5 @@
+mounted(){
+    this.$nextTick(() => { 
+        /* code */ 
+        })
+    }
